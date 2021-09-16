@@ -2,3 +2,6 @@
 
 Refer to projects for tasks
 https://github.com/lcborn4/avatest-backend/projects/1
+
+## Postman Collection
+add link

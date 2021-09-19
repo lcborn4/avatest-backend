@@ -11,10 +11,9 @@ const controller = require('./controller')();
 //cors options
 var corsOptions = {
   origin: 'https://web.ava.me',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

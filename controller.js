@@ -58,7 +58,7 @@ module.exports = () => {
         console.log('first mutations', conversations)
 
         let newMutation = {
-            "id": helpers.revisedRandId().toString(),
+            "id": helpers.randId().toString(),
             "text": req.body.text,
             "lastMutation": { // The last mutation of this conversation
                 "type": req.body.type,

@@ -13,7 +13,7 @@ module.exports = () => {
     }
 
     function server(req, res) {
-        console.log('req.headers.origin', req.headersorigin)
+        console.log('req.headers.origin', req.headers.origin)
 
         return res.status(200).send('Hello World!');
     }

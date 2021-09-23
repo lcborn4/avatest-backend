@@ -14,8 +14,8 @@ var corsOptions = {
   optionsSuccessStatus: 200 // For legacy browser support
 }
 
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cors(corsOptions));
 
 app.get('/', controller.server);
@@ -53,6 +53,7 @@ app.post('/mutations',
   (req, res, next) => {
     var origin = req.headers.origin;
     console.log('origin -- ', origin)
+    console.log('req.body',req.body)
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ "ok": false, "msg": JSON.stringify(errors.array()), errors: errors.array() });

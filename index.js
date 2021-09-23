@@ -16,7 +16,11 @@ var corsOptions = {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+
+app.use(cors({
+  origin: 'https://web.ava.me',
+}));
 
 app.get('/', controller.server);
 app.get('/ping', controller.ping);

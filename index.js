@@ -14,8 +14,8 @@ var corsOptions = {
   optionsSuccessStatus: 200 // For legacy browser support
 }
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
 // app.use(cors(corsOptions));
 
 app.use(cors({

@@ -56,7 +56,7 @@ module.exports = () => {
     function mutations(req, res) {
 
         console.log('first mutations', conversations)
-
+        console.log('req.body',req.body)
         let newMutation = {
             "id": req.body.conversationId,
             "text": req.body.text,

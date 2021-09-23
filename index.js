@@ -51,9 +51,6 @@ app.post('/mutations',
   body('origin.bob').isInt(),
   // body('origin') contains alice and bob
   (req, res, next) => {
-    var origin = req.headers.origin;
-    console.log('origin -- ', origin)
-    console.log('req.body',req.body)
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ "ok": false, "msg": JSON.stringify(errors.array()), errors: errors.array() });

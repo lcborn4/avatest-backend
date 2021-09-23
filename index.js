@@ -11,11 +11,12 @@ const controller = require('./controller')();
 //cors options
 var corsOptions = {
   origin: 'https://web.ava.me',
+  optionsSuccessStatus: 200 // For legacy browser support
 }
 
-app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors(corsOptions));
 
 app.get('/', controller.server);
 app.get('/ping', controller.ping);

@@ -44,7 +44,6 @@ app.get('/conversations', controller.getConversations);
 app.post('/mutations',
   body('data.type').isIn(['insert', 'delete']),//. insert or delete(),
   body('data.index').isInt(),// in the boundary
-  body('data.length').isInt(),// in the boundary
   body('data.text').isString(),// string and exists
   body('author').isIn(['alice', 'bob']),// alice or bob
   body('origin').exists(),

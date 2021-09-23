@@ -63,7 +63,7 @@ module.exports = () => {
             "lastMutation": { // The last mutation of this conversation
                 "type": req.body.data.type,
                 "index": req.body.data.index,
-                "length": req.body.data.length,
+                "length": req.body.text.length,
                 "text": req.body.data.text,
                 "author": req.body.author,
                 "origin": {

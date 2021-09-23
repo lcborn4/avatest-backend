@@ -75,13 +75,13 @@ module.exports = () => {
         }
 
         //update array
-        conversations[req.body.index] = newMutation;
+        conversations[req.body.data.index] = newMutation;
 
         console.log('second mutations', conversations)
 
         let message = {
             "ok": true,
-            "text": req.body.text
+            "text": req.body.data.text
         }
         let messageStatus = 201;
 

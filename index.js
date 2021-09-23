@@ -42,10 +42,10 @@ app.get('/conversations', controller.getConversations);
 // }
 
 app.post('/mutations',
-  body('type').isIn(['insert', 'delete']),//. insert or delete(),
-  body('index').isInt(),// in the boundary
-  body('length').isInt(),// in the boundary
-  body('text').isString(),// string and exists
+  body('data.type').isIn(['insert', 'delete']),//. insert or delete(),
+  body('data.index').isInt(),// in the boundary
+  body('data.length').isInt(),// in the boundary
+  body('data.text').isString(),// string and exists
   body('author').isIn(['alice', 'bob']),// alice or bob
   body('origin').exists(),
   body('origin.alice').isInt(),

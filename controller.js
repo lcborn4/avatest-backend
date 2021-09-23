@@ -13,8 +13,6 @@ module.exports = () => {
     }
 
     function server(req, res) {
-        console.log('req.headers.origin', req.headers.origin)
-
         return res.status(200).send('Hello World!');
     }
 
@@ -60,19 +58,20 @@ module.exports = () => {
         console.log('first mutations', conversations)
 
         let newMutation = {
-            "id": helpers.randId().toString(),
+            "id": req.body.conversationId,
             "text": req.body.text,
             "lastMutation": { // The last mutation of this conversation
-                "type": req.body.type,
-                "index": req.body.index,
-                "length": req.body.length,
-                "text": req.body.text,
+                "type": req.body.data.type,
+                "index": req.body.data.index,
+                "length": req.body.data.length,
+                "text": req.body.data.text,
                 "author": req.body.author,
                 "origin": {
                     "alice": req.body.origin.alice,
                     "bob": req.body.origin.bob,
                 }
             }
+
         }
 
         //update array

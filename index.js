@@ -24,15 +24,20 @@ app.get('/conversations', controller.getConversations);
 
 //example payload
 ///need these fields
-// "type": "insert | delete",
-// "index": "number", // the start index you will insert or delete
-// "length": "number | undefined", // the length of the text you will insert or delete
-// "text": "string | undefined", // the text you will insert or delete
-// "author": "alice | bob",
-// "origin": {
-//   // Get the latest mutation of the conversation first
-//   "alice": "number", // should be incremented if this mutation is requested by alice.
-//   "bob": "number" // should be incremented if this mutation is requested by bob.
+// {
+// 	"author": "alice | bob",
+// 	"origin": {
+//     // Get the latest mutation of the conversation first
+//     "alice": "number", // should be incremented if this mutation is requested by alice.
+//     "bob": "number" // should be incremented if this mutation is requested by bob.
+//   },
+// 	"conversationId": // the timestamp when this conversation is created.
+// 	"data": {
+// 		"type": "insert | delete",
+// 		"index": "number", // the start index where the mutation will be applied
+// 		"length": "number | undefined", // the length of the text which will inserted or deleted
+// 		"text": "string | undefined", // the text which will be inserted or deleted
+// 	},
 // }
 
 app.post('/mutations',
